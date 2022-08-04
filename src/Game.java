@@ -11,7 +11,7 @@ public class Game {
         CardDeck cardDeck = new CardDeck();
         cardDeck.createCardDeck();
         int order = (int) (Math.random() * 2) + 1;
-        System.out.println("Жребий определил первого игрока");
+        System.out.println("Определяем игрока, который будет ходить первым");
         Thread.sleep(1000);
         System.out.println("Им будет Игрок #" + order);
         Thread.sleep(1000);
