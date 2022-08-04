@@ -7,7 +7,7 @@ public class Card {
         setCardValue(cardName);
     }
 
-    public void setCardName(CardName cardName) {
+    private void setCardName(CardName cardName) {
         switch (cardName){
             case SIX -> this.cardName = "Шесть";
             case SEVEN -> this.cardName = "Семь";
@@ -21,7 +21,7 @@ public class Card {
         }
     }
 
-    public void setCardValue(CardName cardName) {
+    private void setCardValue(CardName cardName) {
         switch (cardName){
             case SIX -> this.cardValue = 6;
             case SEVEN -> this.cardValue = 7;
