@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" defaultCharsetForPropertiesFiles="windows-1251">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/src/Card.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/CardDeck.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/Game.java" charset="windows-1251" />
-    <file url="PROJECT" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/CardDeck.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/Game.java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

@@ -11,22 +11,22 @@ public class Game {
         CardDeck cardDeck = new CardDeck();
         cardDeck.createCardDeck();
         int order = (int) (Math.random() * 2) + 1;
-        System.out.println("Определяем игрока, который будет ходить первым");
+        System.out.println("РћРїСЂРµРґРµР»СЏРµРј РёРіСЂРѕРєР°, РєРѕС‚РѕСЂС‹Р№ Р±СѓРґРµС‚ С…РѕРґРёС‚СЊ РїРµСЂРІС‹Рј");
         Thread.sleep(1000);
-        System.out.println("Им будет Игрок #" + order);
+        System.out.println("РРј Р±СѓРґРµС‚ РРіСЂРѕРє #" + order);
         Thread.sleep(1000);
-        System.out.println("Игрок #" + order + " перетасовывает колоду и раздает карты");
+        System.out.println("РРіСЂРѕРє #" + order + " РїРµСЂРµС‚Р°СЃРѕРІС‹РІР°РµС‚ РєРѕР»РѕРґСѓ Рё СЂР°Р·РґР°РµС‚ РєР°СЂС‚С‹");
         cardDeck.mix();
         cardDeck.dealCards(player1, player2);
         Thread.sleep(1000);
 
         try {
             while (true){
-                System.out.println("\nНачало хода");
+                System.out.println("\nРќР°С‡Р°Р»Рѕ С…РѕРґР°");
                 Thread.sleep(1000);
 
                 if (isDraw){
-                    System.out.println("Игроки кладут карты взакрытую");
+                    System.out.println("РРіСЂРѕРєРё РєР»Р°РґСѓС‚ РєР°СЂС‚С‹ РІР·Р°РєСЂС‹С‚СѓСЋ");
                     table.putCard(player1.getCard(isDraw));
                     table.putCard(player2.getCard(isDraw));
                     Thread.sleep(1000);
@@ -34,13 +34,13 @@ public class Game {
                 }
                 else{
                     if (order == 1){
-                        System.out.println("Очередность хода переходит к Игроку #1");
+                        System.out.println("РћС‡РµСЂРµРґРЅРѕСЃС‚СЊ С…РѕРґР° РїРµСЂРµС…РѕРґРёС‚ Рє РРіСЂРѕРєСѓ #1");
                         Thread.sleep(1000);
                         table.putCard(player1.getCard(isDraw));
                         order = 2;
                     }
                     else {
-                        System.out.println("Очередность хода переходит к Игроку #2");
+                        System.out.println("РћС‡РµСЂРµРґРЅРѕСЃС‚СЊ С…РѕРґР° РїРµСЂРµС…РѕРґРёС‚ Рє РРіСЂРѕРєСѓ #2");
                         Thread.sleep(1000);
                         table.putCard(player2.getCard(isDraw));
                         order = 1;
@@ -52,56 +52,56 @@ public class Game {
         catch (GameIsOutException gameIsOutException){
             LocalTime finish = LocalTime.now();
             LocalTime gameIsGone = LocalTime.of(finish.minusHours(start.getHour()).getHour(), finish.minusMinutes(start.getMinute()).getMinute(), finish.minusSeconds(start.getSecond()).getSecond());
-            System.out.println("Игра закончена!");
+            System.out.println("РРіСЂР° Р·Р°РєРѕРЅС‡РµРЅР°!");
             Thread.sleep(1000);
             if (player1.cardDeckIsEmpty()){
-                System.out.println("Победил Игрок #2");
+                System.out.println("РџРѕР±РµРґРёР» РРіСЂРѕРє #2");
             }
             else {
-                System.out.println("Победил Игрок #1");
+                System.out.println("РџРѕР±РµРґРёР» РРіСЂРѕРє #1");
             }
             Thread.sleep(1000);
-            System.out.println("Игра продлилась: " + gameIsGone.getHour() + " час(часа/часов), " + gameIsGone.getMinute() + " минут, " + gameIsGone.getSecond() + " секунд");
+            System.out.println("РРіСЂР° РїСЂРѕРґР»РёР»Р°СЃСЊ: " + gameIsGone.getHour() + " С‡Р°СЃ(С‡Р°СЃР°/С‡Р°СЃРѕРІ), " + gameIsGone.getMinute() + " РјРёРЅСѓС‚, " + gameIsGone.getSecond() + " СЃРµРєСѓРЅРґ");
         }
     }
 
     public static void checkWinner(Table table, Player player1, Player player2) throws InterruptedException {
         if (table.getCountCardsOnTheTable() % 2 == 0 && table.getCountCardsOnTheTable() != 0){
             Thread.sleep(1000);
-            System.out.println("\nПроверка на выигрыш");
+            System.out.println("\nРџСЂРѕРІРµСЂРєР° РЅР° РІС‹РёРіСЂС‹С€");
             Thread.sleep(1000);
             if (player1.getLastCardValue() == 6 && player2.getLastCardValue() == 14){
                 table.giveCardsToWinner(player1);
-                System.out.println("Шестерка бьет туза");
+                System.out.println("РЁРµСЃС‚РµСЂРєР° Р±СЊРµС‚ С‚СѓР·Р°");
                 Thread.sleep(1000);
-                System.out.println("Забирает Игрок #1");
+                System.out.println("Р—Р°Р±РёСЂР°РµС‚ РРіСЂРѕРє #1");
             }
             else if (player2.getLastCardValue() == 6 && player1.getLastCardValue() == 14){
                 table.giveCardsToWinner(player2);
-                System.out.println("Шестерка бьет туза");
+                System.out.println("РЁРµСЃС‚РµСЂРєР° Р±СЊРµС‚ С‚СѓР·Р°");
                 Thread.sleep(1000);
-                System.out.println("Забирает Игрок #2");
+                System.out.println("Р—Р°Р±РёСЂР°РµС‚ РРіСЂРѕРє #2");
             }
             else if (player1.getLastCardValue() > player2.getLastCardValue()){
                 table.giveCardsToWinner(player1);
-                System.out.println(player1.getLastCardName() + " больше, чем " + player2.getLastCardName());
+                System.out.println(player1.getLastCardName() + " Р±РѕР»СЊС€Рµ, С‡РµРј " + player2.getLastCardName());
                 Thread.sleep(1000);
-                System.out.println("Забирает Игрок #1");
+                System.out.println("Р—Р°Р±РёСЂР°РµС‚ РРіСЂРѕРє #1");
 
             }
             else if (player1.getLastCardValue() < player2.getLastCardValue()){
                 table.giveCardsToWinner(player2);
-                System.out.println(player1.getLastCardName() + " меньше, чем " + player2.getLastCardName());
+                System.out.println(player1.getLastCardName() + " РјРµРЅСЊС€Рµ, С‡РµРј " + player2.getLastCardName());
                 Thread.sleep(1000);
-                System.out.println("Забирает Игрок #2");
+                System.out.println("Р—Р°Р±РёСЂР°РµС‚ РРіСЂРѕРє #2");
             }
             else{
-                System.out.println("Ничья");
+                System.out.println("РќРёС‡СЊСЏ");
                 isDraw = true;
                 return;
             }
-            System.out.println("У игрока #1 " + player1.getCountCards() + " карт");
-            System.out.println("У игрока #2 " + player2.getCountCards() + " карт");
+            System.out.println("РЈ РёРіСЂРѕРєР° #1 " + player1.getCountCards() + " РєР°СЂС‚");
+            System.out.println("РЈ РёРіСЂРѕРєР° #2 " + player2.getCountCards() + " РєР°СЂС‚");
         }
     }
 }
