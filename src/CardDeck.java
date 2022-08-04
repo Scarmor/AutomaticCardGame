@@ -48,7 +48,7 @@ public class CardDeck {
 
     @Override
     public String toString() {
-        return "Колода содержит:" +
+        return "РљРѕР»РѕРґР° СЃРѕРґРµСЂР¶РёС‚:" +
                 "\n" + deque +
                 "\n";
     }

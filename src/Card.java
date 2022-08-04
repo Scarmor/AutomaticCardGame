@@ -9,15 +9,15 @@ public class Card {
 
     private void setCardName(CardName cardName) {
         switch (cardName){
-            case SIX -> this.cardName = "ÿÂÒÚ¸";
-            case SEVEN -> this.cardName = "—ÂÏ¸";
-            case EIGHT -> this.cardName = "¬ÓÒÂÏ¸";
-            case NINE -> this.cardName = "ƒÂ‚ˇÚ¸";
-            case TEN -> this.cardName = "ƒÂÒˇÚ¸";
-            case JACK -> this.cardName = "¬‡ÎÂÚ";
-            case QUEEN -> this.cardName = "ƒ‡Ï‡";
-            case KING -> this.cardName = " ÓÓÎ¸";
-            case ACE -> this.cardName = "“ÛÁ";
+            case SIX -> this.cardName = "–®–µ—Å—Ç—å";
+            case SEVEN -> this.cardName = "–°–µ–º—å";
+            case EIGHT -> this.cardName = "–í–æ—Å–µ–º—å";
+            case NINE -> this.cardName = "–î–µ–≤—è—Ç—å";
+            case TEN -> this.cardName = "–î–µ—Å—è—Ç—å";
+            case JACK -> this.cardName = "–í–∞–ª–µ—Ç";
+            case QUEEN -> this.cardName = "–î–∞–º–∞";
+            case KING -> this.cardName = "–ö–æ—Ä–æ–ª—å";
+            case ACE -> this.cardName = "–¢—É–∑";
         }
     }
 

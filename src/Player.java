@@ -8,27 +8,27 @@ public class Player {
     public Player(int id) throws InterruptedException {
         cardDeck = new CardDeck();
         this.id = id;
-        System.out.printf("Игрок #%d садится за стол\n", id);
+        System.out.printf("РРіСЂРѕРє #%d СЃР°РґРёС‚СЃСЏ Р·Р° СЃС‚РѕР»\n", id);
         Thread.sleep(1000);
     }
 
     public Card getCard(Boolean isDraw) throws InterruptedException {
         Card card = cardDeck.deque.poll();
         if (isDraw){
-            System.out.println("Игрок #" + id + " берет неизвестную карту из колоды");
+            System.out.println("РРіСЂРѕРє #" + id + " Р±РµСЂРµС‚ РЅРµРёР·РІРµСЃС‚РЅСѓСЋ РєР°СЂС‚Сѓ РёР· РєРѕР»РѕРґС‹");
             Thread.sleep(1000);
             lastCard = card;
             return lastCard;
         }
         if (card != null){
-            System.out.println("Игрок #" + id + " берет карту " + card + " из колоды");
+            System.out.println("РРіСЂРѕРє #" + id + " Р±РµСЂРµС‚ РєР°СЂС‚Сѓ " + card + " РёР· РєРѕР»РѕРґС‹");
             Thread.sleep(1000);
             lastCard = card;
         }
         else {
-            System.out.printf("У игрока #%d не осталось карт в колоде\n", id);
+            System.out.printf("РЈ РёРіСЂРѕРєР° #%d РЅРµ РѕСЃС‚Р°Р»РѕСЃСЊ РєР°СЂС‚ РІ РєРѕР»РѕРґРµ\n", id);
             Thread.sleep(1000);
-            System.out.printf("Игрок #%d проиграл\n", id);
+            System.out.printf("РРіСЂРѕРє #%d РїСЂРѕРёРіСЂР°Р»\n", id);
             Thread.sleep(1000);
             throw new GameIsOutException();
         }

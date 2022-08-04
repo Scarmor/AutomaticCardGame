@@ -9,7 +9,7 @@ public class Table {
     public static Table getInstance() throws InterruptedException {
         if (instance == null){
             instance = new Table();
-            System.out.println("Стол успешно создан");
+            System.out.println("РЎС‚РѕР» СѓСЃРїРµС€РЅРѕ СЃРѕР·РґР°РЅ");
             Thread.sleep(1000);
         }
         return instance;
@@ -17,7 +17,7 @@ public class Table {
 
     public void putCard(Card card) throws InterruptedException {
         cardsOnTheTable.add(card);
-        System.out.println("И кладет её на стол");
+        System.out.println("Р РєР»Р°РґРµС‚ РµС‘ РЅР° СЃС‚РѕР»");
     }
 
     public int getCountCardsOnTheTable(){
